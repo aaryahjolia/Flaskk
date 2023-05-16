@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <h2>Device-wise Efficiency</h2>
+    <img src="data:image/png;base64,{{ image }}" alt="Device-wise Efficiency">
+    <h2>Average RPM</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Device ID</th>
+                <th>Average RPM</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for device_id, rpm in average_rpm.items() %}
+            <tr>
+                <td>{{ device_id }}</td>
+                <td>{{ rpm }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
